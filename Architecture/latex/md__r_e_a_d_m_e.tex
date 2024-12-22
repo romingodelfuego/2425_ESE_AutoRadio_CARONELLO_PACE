@@ -1,0 +1,113 @@
+\chapter{TP de Synthèse – Autoradio}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{TP de Synthèse – Autoradio@{TP de Synthèse – Autoradio}}
+\label{md__r_e_a_d_m_e_autotoc_md28}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md28}%
+
+
+Ce TP propose d\textquotesingle{}utiliser une NUCLEO\+\_\+\+L476\+RG afin de rediriger un signal audio. Nous utiliserons un shield afin de pouvoir interfacer la board avec les différents inputs et outputs nécessaires.
+
+Voir ici la \href{./audio_iface.pdf}{\texttt{ datasheet \+: audio interface}}
+
+Nous avons mis un point d\textquotesingle{}honneur sur l\textquotesingle{}organisation des fichiers. Pour vous aidez à vous y retrouver, nous avons documenté avec Doxygen le projet.
+\begin{DoxyItemize}
+\item[\DoxyChecked] 1. Shell RTOS
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] 2. Driver LED
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] 3.4 Générer un signal audio
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] 3.5 Rediriger un signal audio
+\item[\DoxyUnchecked] 4. Visualiser au Vu mettre
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyUnchecked] 5. Filtre RC
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyUnchecked] 6. Effet Audio
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysection{\texorpdfstring{1. Démarrage}{1. Démarrage}}\label{md__r_e_a_d_m_e_autotoc_md29}
+On souhaite ici implémenter un shell dans un os temps réel. On créer donc une tache avec une gestion d\textquotesingle{}erreurs 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ c}
+\DoxyCodeLine{xTaskCreate(shell\_run,\ \ "{}Shell"{},\ TASK\_STACK\_DEPTH\_SHELL,\ NULL,\ TASK\_PRIORITY\_SHELL,\ \&h\_task\_shell)\ !=\ pdPASS\ ?\ Error\_Handler():(void)0;}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysection{\texorpdfstring{2. Le GPIO Expander et le VU-\/\+Metre}{2. Le GPIO Expander et le VU-\/\+Metre}}\label{md__r_e_a_d_m_e_autotoc_md30}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{\texorpdfstring{2.\+1 Configuration}{2.\+1 Configuration}}\label{md__r_e_a_d_m_e_autotoc_md31}
+
+\begin{DoxyEnumerate}
+\item Quelle est la référence du GPIO Expander ? Vous aurez besoin de sa datasheet, téléchargez-\/la. \begin{quote}
+\href{./MCP23017_Data_Sheet_DS20001952-2998473.pdf}{\texttt{ MCP23\+S17-\/\+E/\+SO}}\end{quote}
+
+\item Sur le STM32, quel SPI est utilisé ? \texorpdfstring{$>$}{>}On utilise le SPI3 avec le branchement suivant \texorpdfstring{$>$}{>}{\ttfamily  \texorpdfstring{$>$}{>}PB5 \texorpdfstring{$\vert$}{|} SPI3\+\_\+\+MOSI \texorpdfstring{$>$}{>}PC10 \texorpdfstring{$\vert$}{|} SPI3\+\_\+\+SCK \texorpdfstring{$>$}{>}PC11 \texorpdfstring{$\vert$}{|} SPI3\+\_\+\+MISO \texorpdfstring{$>$}{>}}
+\item Quels sont les paramètres à configurer dans STM32\+Cube\+IDE ? Frame Format \+: MOTOROLA \textbackslash{} Data Size \+: 8 bits \textbackslash{} First Bit \+: MSB On réduit également le Baud rate à 312.\+5 k\+Bits/s 
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsection{\texorpdfstring{2.\+3 Driver}{2.\+3 Driver}}\label{md__r_e_a_d_m_e_autotoc_md32}
+On écrit un driver qui communique avec le GPIO expander pour allumer ou eteindre les LEDs qui y sont reliée à ces branches. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ MCP23S17\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ MCP23S17\_WriteRegister(uint8\_t\ reg,\ uint8\_t\ data);}
+\DoxyCodeLine{uint8\_t\ MCP23S17\_ReadRegister(uint8\_t\ reg);}
+
+\end{DoxyCode}
+ Dans le shell on utilise ces fonctions pour choisir l\textquotesingle{}état de la LED. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ c}
+\DoxyCodeLine{void\ subfunct\_led(char\ **argv)\{}
+\DoxyCodeLine{\ \ \ \ int\ GPIO\ =\ atoi(argv[1]);}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ i=(uint8\_t)\ strtol(argv[2],\ NULL,\ 10);}
+\DoxyCodeLine{\ \ \ \ if\ (GPIO\ ==\ atoi("{}A"{}))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ MCP23S17\_WriteRegister(0x12,\ (0xFF<<i)\&0xFF)\ ==\ HAL\_OK\ ?\ debug(START,"{}MCP23S17\ -\/\ GPIOA"{})\ :\ debug(D\_ERROR,"{}MCP23S17\ -\/\ GPIOA"{});}
+\DoxyCodeLine{\ \ \ \ \}else\ if\ (GPIO\ ==\ atoi("{}B"{}))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ MCP23S17\_WriteRegister(0x13,\ (0xFF<<i)\&0xFF)\ ==\ HAL\_OK\ ?\ debug(START,"{}MCP23S17\ -\/\ GPIOB"{})\ :\ debug(D\_ERROR,"{}MCP23S17\ -\/\ GPIOB"{});}
+\DoxyCodeLine{\ \ \ \ \}else\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ debug(D\_ERROR,"{}Argument\ 2\ :\ A\ ou\ B\ attendu\(\backslash\)r\(\backslash\)n"{});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysection{\texorpdfstring{3 Le CODEC Audio SGTL5000}{3 Le CODEC Audio SGTL5000}}\label{md__r_e_a_d_m_e_autotoc_md33}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsection{\texorpdfstring{3.\+1 Configuration préalables}{3.\+1 Configuration préalables}}\label{md__r_e_a_d_m_e_autotoc_md34}
+
+\begin{DoxyEnumerate}
+\item Quelles pins sont utilisées pour l’\+I2C ? À quel I2C cela correspond dans le STM32 ? On utilise le I2\+C2 avec le branchement suivant \+: \texorpdfstring{$>$}{>}{\ttfamily  \texorpdfstring{$>$}{>}PB10 \texorpdfstring{$\vert$}{|} I2\+C2\+\_\+\+SCL \texorpdfstring{$>$}{>}PB11 \texorpdfstring{$\vert$}{|} I2\+C2\+\_\+\+SDA \texorpdfstring{$>$}{>}} 
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{\texorpdfstring{3.\+2 Configuration du CODEC par l’\+I2C}{3.\+2 Configuration du CODEC par l’\+I2C}}\label{md__r_e_a_d_m_e_autotoc_md35}
+On écrit également un driver pour communiquer avec le codec 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ sgtl5000\_i2c\_read\_register(uint16\_t\ reg\_address,\ uint16\_t\ *\ p\_data);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ sgtl5000\_i2c\_write\_register(uint16\_t\ reg\_address,\ uint16\_t\ data);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ sgtl5000\_i2c\_set\_bit(uint16\_t\ reg\_address,\ uint16\_t\ mask);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ sgtl5000\_i2c\_clear\_bit(uint16\_t\ reg\_address,\ uint16\_t\ mask);}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{\texorpdfstring{3.\+4 Génération de signal audio}{3.\+4 Génération de signal audio}}\label{md__r_e_a_d_m_e_autotoc_md36}
+Dans le .ioc, on configue le block A2 pour être en {\ttfamily Master with Master Clock} pour gérer la transmission. Et le block B2 comme un {\ttfamily Synchronous Slave} pour gérer la réception. Pour générer un signal triangle, on n\textquotesingle{}active seulement le canal A2 du I2S et on transmet par DMA le bufffer rempli pour être un triangle.  
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SIZE\_SAI\_BUFFER\ /\ 2;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Montée\ du\ triangle}}
+\DoxyCodeLine{\ \ \ \ data\_SAI\_rx[i]\ =\ (uint16\_t)((\textcolor{keywordtype}{float})i\ /\ (SIZE\_SAI\_BUFFER\ /\ 2)\ *\ UINT16\_MAX);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ SIZE\_SAI\_BUFFER\ /\ 2;\ i\ <\ SIZE\_SAI\_BUFFER;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Descente\ du\ triangle}}
+\DoxyCodeLine{\ \ \ \ data\_SAI\_rx[i]\ =\ (uint16\_t)((\textcolor{keywordtype}{float})(SIZE\_SAI\_BUFFER\ -\/\ i)\ /\ (SIZE\_SAI\_BUFFER\ /\ 2)\ *\ UINT16\_MAX);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\mbox{\hyperlink{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f}{\_\_HAL\_SAI\_ENABLE}}(\&\mbox{\hyperlink{sai_8h_ac6d5feeed703ab4c5947f651e33eac84}{hsai\_BlockA2}});}
+\DoxyCodeLine{HAL\_SAI\_Transmit\_DMA(\&\mbox{\hyperlink{sai_8h_ac6d5feeed703ab4c5947f651e33eac84}{hsai\_BlockA2}},\ (uint8\_t*)data\_SAI\_rx,\ SIZE\_SAI\_BUFFER);}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsection{\texorpdfstring{3.\+5 Bypass Numérique}{3.\+5 Bypass Numérique}}\label{md__r_e_a_d_m_e_autotoc_md37}
+Pour créer un bypass il nous suffit de recevoir le signal depuis le block B2 pour ensuite le transmettre sur le block A2. Ici nous ne faisons aucun traitement sur le signal. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f}{\_\_HAL\_SAI\_ENABLE}}(\&hsai\_BlockB2);}
+\DoxyCodeLine{\mbox{\hyperlink{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f}{\_\_HAL\_SAI\_ENABLE}}(\&\mbox{\hyperlink{sai_8h_ac6d5feeed703ab4c5947f651e33eac84}{hsai\_BlockA2}});}
+\DoxyCodeLine{HAL\_SAI\_Receive\_DMA(\&hsai\_BlockB2,\ (uint8\_t*)data\_SAI\_rx,\ SIZE\_SAI\_BUFFER);}
+\DoxyCodeLine{HAL\_SAI\_Transmit\_DMA(\&\mbox{\hyperlink{sai_8h_ac6d5feeed703ab4c5947f651e33eac84}{hsai\_BlockA2}},\ (uint8\_t*)data\_SAI\_rx,\ SIZE\_SAI\_BUFFER)}
+
+\end{DoxyCode}
+ Nous avons tester en envoyant depuis un port jack de nos ordinateurs une musique, puis nous avons ecouter depuis la prise jack de sortie sur des ecouteurs filaires la musique. Le son n\textquotesingle{}est vraiment pas bon, il semble que les aigues soient complètement filtrés.\hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysubsection{\texorpdfstring{4. Visualisation}{4. Visualisation}}\label{md__r_e_a_d_m_e_autotoc_md38}
+Nous êtions proches de proposer un vu-\/metre sur ce TP. Nous avions créer une tache, créer des notifications lors de la fin de la réception DMA qui notifiait la tache VU-\/\+Metre. Le point bloquant que nous n\textquotesingle{}avons pas eu le temps de traiter est l\textquotesingle{}allumage des LED selon la specification VU.
+
+Dans le code, nous avons tenter une première méthode dans laquelle nous regardions si la moyenne du signal était comprise entre certain seuil. Malheureusement ce n\textquotesingle{}est pas ainsi que l\textquotesingle{}echelle VU fonctionne.
+
+Il fautdrait donc implémenter une correspondance entre le signal et l\textquotesingle{}échelle VU \+: \href{https://fr.wikipedia.org/wiki/VU-m\%C3\%A8tre}{\texttt{ WIKIPEDIA -\/ Vu Mètre}} 

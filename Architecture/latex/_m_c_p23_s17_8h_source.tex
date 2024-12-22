@@ -1,0 +1,29 @@
+\doxysection{MCP23\+S17.\+h}
+\hypertarget{_m_c_p23_s17_8h_source}{}\label{_m_c_p23_s17_8h_source}\index{Core/Inc/components/MCP23S17.h@{Core/Inc/components/MCP23S17.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ MCP23S17.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Nov\ 29,\ 2024}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ romingo}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_COMPONENTS\_MCP23S17\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_COMPONENTS\_MCP23S17\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}shell.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spi_8h}{spi.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ BANK\ =1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IODIRA\_Addr\ 0x00}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ IODIRB\_Addr\ 0x10}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ GPINTENA\_Addr\ 0x01}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ MCP23S17\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00019\ \mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ MCP23S17\_WriteRegister(uint8\_t\ reg,\ uint8\_t\ data);}
+\DoxyCodeLine{00020\ uint8\_t\ MCP23S17\_ReadRegister(uint8\_t\ reg);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_COMPONENTS\_MCP23S17\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

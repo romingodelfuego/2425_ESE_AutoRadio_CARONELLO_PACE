@@ -1,0 +1,254 @@
+\doxysubsubsection{SAI Exported Macros}
+\hypertarget{group___s_a_i___exported___macros}{}\label{group___s_a_i___exported___macros}\index{SAI Exported Macros@{SAI Exported Macros}}
+
+
+macros to handle interrupts and specific configurations  
+
+
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga45b0ef0710229953f17d04ff7764f620}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Reset SAI handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_gaa95d2cf8b2104cc1a51d71cd4e809d37}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the specified SAI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga75f5b39f3d8044d21510fbf9bb416317}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the specified SAI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga0afa781d3932905dd3916078a99abd48}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check whether the specified SAI interrupt source is enabled or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga47950261a8f24947541c014189eb34d8}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check whether the specified SAI flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga6ddbe8cd04c21fa5b97346cbcd91ccae}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the specified SAI pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable SAI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_a_i___exported___macros_gaa345d21ea570e79efa758bfbe289d1d9}{\+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable SAI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+macros to handle interrupts and specific configurations 
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_a_i___exported___macros_ga6ddbe8cd04c21fa5b97346cbcd91ccae}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_CLEAR\_FLAG@{\_\_HAL\_SAI\_CLEAR\_FLAG}}
+\index{\_\_HAL\_SAI\_CLEAR\_FLAG@{\_\_HAL\_SAI\_CLEAR\_FLAG}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_CLEAR\_FLAG}{\_\_HAL\_SAI\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga6ddbe8cd04c21fa5b97346cbcd91ccae} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{, }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>Instance-\/>CLRFR\ =\ (\_\_FLAG\_\_))}
+
+\end{DoxyCode}
+
+
+Clear the specified SAI pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item SAI\+\_\+\+FLAG\+\_\+\+OVRUDR\+: Clear Overrun underrun \item SAI\+\_\+\+FLAG\+\_\+\+MUTEDET\+: Clear Mute detection \item SAI\+\_\+\+FLAG\+\_\+\+WCKCFG\+: Clear Wrong Clock Configuration \item SAI\+\_\+\+FLAG\+\_\+\+FREQ\+: Clear FIFO request \item SAI\+\_\+\+FLAG\+\_\+\+CNRDY\+: Clear Codec not ready \item SAI\+\_\+\+FLAG\+\_\+\+AFSDET\+: Clear Anticipated frame synchronization detection \item SAI\+\_\+\+FLAG\+\_\+\+LFSDET\+: Clear Late frame synchronization detection\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_gaa345d21ea570e79efa758bfbe289d1d9}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_DISABLE@{\_\_HAL\_SAI\_DISABLE}}
+\index{\_\_HAL\_SAI\_DISABLE@{\_\_HAL\_SAI\_DISABLE}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_DISABLE}{\_\_HAL\_SAI\_DISABLE}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_gaa345d21ea570e79efa758bfbe289d1d9} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ \ \string~SAI\_xCR1\_SAIEN)}
+
+\end{DoxyCode}
+
+
+Disable SAI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_ga75f5b39f3d8044d21510fbf9bb416317}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_DISABLE\_IT@{\_\_HAL\_SAI\_DISABLE\_IT}}
+\index{\_\_HAL\_SAI\_DISABLE\_IT@{\_\_HAL\_SAI\_DISABLE\_IT}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_DISABLE\_IT}{\_\_HAL\_SAI\_DISABLE\_IT}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga75f5b39f3d8044d21510fbf9bb416317} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{, }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>Instance-\/>IMR\ \&=\ (\string~(\_\_INTERRUPT\_\_)))}
+
+\end{DoxyCode}
+
+
+Disable the specified SAI interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the interrupt source to enable or disable. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SAI\+\_\+\+IT\+\_\+\+OVRUDR\+: Overrun underrun interrupt enable \item SAI\+\_\+\+IT\+\_\+\+MUTEDET\+: Mute detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+WCKCFG\+: Wrong Clock Configuration interrupt enable \item SAI\+\_\+\+IT\+\_\+\+FREQ\+: FIFO request interrupt enable \item SAI\+\_\+\+IT\+\_\+\+CNRDY\+: Codec not ready interrupt enable \item SAI\+\_\+\+IT\+\_\+\+AFSDET\+: Anticipated frame synchronization detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+LFSDET\+: Late frame synchronization detection interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_ENABLE@{\_\_HAL\_SAI\_ENABLE}}
+\index{\_\_HAL\_SAI\_ENABLE@{\_\_HAL\_SAI\_ENABLE}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_ENABLE}{\_\_HAL\_SAI\_ENABLE}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga8568947265caaaa934bdf78ce781049f} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ |=\ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7916f81ebe07b5109b0ca405d41eb95b}{SAI\_xCR1\_SAIEN}})}
+
+\end{DoxyCode}
+
+
+Enable SAI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_gaa95d2cf8b2104cc1a51d71cd4e809d37}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_ENABLE\_IT@{\_\_HAL\_SAI\_ENABLE\_IT}}
+\index{\_\_HAL\_SAI\_ENABLE\_IT@{\_\_HAL\_SAI\_ENABLE\_IT}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_ENABLE\_IT}{\_\_HAL\_SAI\_ENABLE\_IT}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_gaa95d2cf8b2104cc1a51d71cd4e809d37} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{, }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>Instance-\/>IMR\ |=\ (\_\_INTERRUPT\_\_))}
+
+\end{DoxyCode}
+
+
+Enable the specified SAI interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the interrupt source to enable or disable. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SAI\+\_\+\+IT\+\_\+\+OVRUDR\+: Overrun underrun interrupt enable \item SAI\+\_\+\+IT\+\_\+\+MUTEDET\+: Mute detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+WCKCFG\+: Wrong Clock Configuration interrupt enable \item SAI\+\_\+\+IT\+\_\+\+FREQ\+: FIFO request interrupt enable \item SAI\+\_\+\+IT\+\_\+\+CNRDY\+: Codec not ready interrupt enable \item SAI\+\_\+\+IT\+\_\+\+AFSDET\+: Anticipated frame synchronization detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+LFSDET\+: Late frame synchronization detection interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_ga47950261a8f24947541c014189eb34d8}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_GET\_FLAG@{\_\_HAL\_SAI\_GET\_FLAG}}
+\index{\_\_HAL\_SAI\_GET\_FLAG@{\_\_HAL\_SAI\_GET\_FLAG}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_GET\_FLAG}{\_\_HAL\_SAI\_GET\_FLAG}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga47950261a8f24947541c014189eb34d8} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{, }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((((\_\_HANDLE\_\_)-\/>Instance-\/>SR)\ \&\ (\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}
+
+\end{DoxyCode}
+
+
+Check whether the specified SAI flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SAI\+\_\+\+FLAG\+\_\+\+OVRUDR\+: Overrun underrun flag. \item SAI\+\_\+\+FLAG\+\_\+\+MUTEDET\+: Mute detection flag. \item SAI\+\_\+\+FLAG\+\_\+\+WCKCFG\+: Wrong Clock Configuration flag. \item SAI\+\_\+\+FLAG\+\_\+\+FREQ\+: FIFO request flag. \item SAI\+\_\+\+FLAG\+\_\+\+CNRDY\+: Codec not ready flag. \item SAI\+\_\+\+FLAG\+\_\+\+AFSDET\+: Anticipated frame synchronization detection flag. \item SAI\+\_\+\+FLAG\+\_\+\+LFSDET\+: Late frame synchronization detection flag. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{FLAG}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_ga0afa781d3932905dd3916078a99abd48}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_GET\_IT\_SOURCE@{\_\_HAL\_SAI\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_SAI\_GET\_IT\_SOURCE@{\_\_HAL\_SAI\_GET\_IT\_SOURCE}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_GET\_IT\_SOURCE}{\_\_HAL\_SAI\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga0afa781d3932905dd3916078a99abd48} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{, }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((((\_\_HANDLE\_\_)-\/>Instance-\/>IMR\ \&\ (\_\_INTERRUPT\_\_))\ ==\ (\_\_INTERRUPT\_\_))\ ?\ SET\ :\ RESET)}
+
+\end{DoxyCode}
+
+
+Check whether the specified SAI interrupt source is enabled or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the SAI interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SAI\+\_\+\+IT\+\_\+\+OVRUDR\+: Overrun underrun interrupt enable \item SAI\+\_\+\+IT\+\_\+\+MUTEDET\+: Mute detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+WCKCFG\+: Wrong Clock Configuration interrupt enable \item SAI\+\_\+\+IT\+\_\+\+FREQ\+: FIFO request interrupt enable \item SAI\+\_\+\+IT\+\_\+\+CNRDY\+: Codec not ready interrupt enable \item SAI\+\_\+\+IT\+\_\+\+AFSDET\+: Anticipated frame synchronization detection interrupt enable \item SAI\+\_\+\+IT\+\_\+\+LFSDET\+: Late frame synchronization detection interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{INTERRUPT}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_a_i___exported___macros_ga45b0ef0710229953f17d04ff7764f620}\index{SAI Exported Macros@{SAI Exported Macros}!\_\_HAL\_SAI\_RESET\_HANDLE\_STATE@{\_\_HAL\_SAI\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_SAI\_RESET\_HANDLE\_STATE@{\_\_HAL\_SAI\_RESET\_HANDLE\_STATE}!SAI Exported Macros@{SAI Exported Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_SAI\_RESET\_HANDLE\_STATE}{\_\_HAL\_SAI\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \label{group___s_a_i___exported___macros_ga45b0ef0710229953f17d04ff7764f620} 
+\#define \+\_\+\+\_\+\+HAL\+\_\+\+SAI\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((\_\_HANDLE\_\_)-\/>State\ =\ \mbox{\hyperlink{group___s_a_i___exported___types_ggac758df9679f0ee29c77d9b1b66289589a4c5621e3b54c74b9f1f1ddfb1258c40d}{HAL\_SAI\_STATE\_RESET}})}
+
+\end{DoxyCode}
+
+
+Reset SAI handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SAI Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

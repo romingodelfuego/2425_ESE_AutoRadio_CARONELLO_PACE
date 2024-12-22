@@ -1,9 +1,12 @@
 # TP de Synthèse – Autoradio
-Ce TP propose d'utiliser une NUCLEO_L476RG afin de rediriger un signal audio. Nous utiliserons un shield afin de pouvoir interfacer la board avec les différentes inputs et outputs nécessaires.
+Ce TP propose d'utiliser une NUCLEO_L476RG afin de rediriger un signal audio. Nous utiliserons un shield afin de pouvoir interfacer la board avec les différents inputs et outputs nécessaires.
  
 Voir ici la [datasheet : audio interface](./audio_iface.pdf)
 
 Nous avons mis un point d'honneur sur l'organisation des fichiers. Pour vous aidez à vous y retrouver, nous avons documenté avec Doxygen le projet.
+
+>[Vue d'ensemble DOXYGEN](/Architecture/html/files.html)
+#### Milestone
 - [x] [1. Shell RTOS](#1-démarrage)
 - [x] [2. Driver LED](#23-driver)
 - [x] [3.4 Générer un signal audio](#34-génération-de-signal-audio)

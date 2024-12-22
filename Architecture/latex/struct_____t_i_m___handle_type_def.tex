@@ -1,0 +1,357 @@
+\doxysection{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def Struct Reference}
+\hypertarget{struct_____t_i_m___handle_type_def}{}\label{struct_____t_i_m___handle_type_def}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+
+
+TIM Time Base Handle Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32l4xx\+\_\+hal\+\_\+tim.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a3766fb0e0e798562f4d51bf15a5dcd9c}{Instance}}
+\item 
+\mbox{\hyperlink{struct_t_i_m___base___init_type_def}{TIM\+\_\+\+Base\+\_\+\+Init\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a4893a3f79eb1219b9dcf341ca4ccb885}{Init}}
+\item 
+\mbox{\hyperlink{group___t_i_m___exported___types_gaa3fa7bcbb4707f1151ccfc90a8cf9706}{HAL\+\_\+\+TIM\+\_\+\+Active\+Channel}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a483ab5ad7eaebf2e4798361047dc64a1}{Channel}}
+\item 
+\mbox{\hyperlink{group___d_m_a___exported___types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_ae41c37262d9dbee8c7ab21a575b8fcdb}{hdma}} \mbox{[}7\mbox{]}
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_af036df32c7e2440fb06776293db7c624}{Lock}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_gae0994cf5970e56ca4903e9151f40010c}{HAL\+\_\+\+TIM\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a377e02048748083f063db636ab248c19}{State}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga1a70fcbe9952e18af5c890e216a15f34}{HAL\+\_\+\+TIM\+\_\+\+Channel\+State\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a2b789b148fb386cba8b41aa8405b3e98}{Channel\+State}} \mbox{[}6\mbox{]}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga1a70fcbe9952e18af5c890e216a15f34}{HAL\+\_\+\+TIM\+\_\+\+Channel\+State\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_af7007ff752c7b50010086958a7bf9a29}{Channel\+NState}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga9b87df539778a60ea940a9d5ba793f7c}{HAL\+\_\+\+TIM\+\_\+\+DMABurst\+State\+Type\+Def}} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_af7253f870ec47dd94ca9cdeafbc08d96}{DMABurst\+State}}
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_aefdb61ea6d3e53063d3d0dacf6684690}{Base\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a19a858dba8ca259e12fc027ce04f34c9}{Base\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a8a4193db348f243741ed0d1906fc837e}{IC\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a0347b280fe557b6b2193235214598970}{IC\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_aabe04080d6da958bcfa4a0a76fa02f64}{OC\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a59f834f89702896b8874f9ce4139f9dc}{OC\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a74a894bd6bfc406ea17c80dac617576d}{PWM\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_ad10b66a214cb471d87b114823b3e6569}{PWM\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_ae382932aa6137bfd1fa10a43701d28b8}{One\+Pulse\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a06f7ceec3d962916e2ac37276f09062d}{One\+Pulse\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a8d049ab1795c3e0f467378fe48b7dc79}{Encoder\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_afbb300097d40ee1220f88441d9713d56}{Encoder\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a40abd1e3986647b0834f80ed3feb09b0}{Hall\+Sensor\+\_\+\+Msp\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_aa5f0c533c853b2ab467bb2ba964b5288}{Hall\+Sensor\+\_\+\+Msp\+De\+Init\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a7de0d85dcc380004ed876c51fd768d66}{Period\+Elapsed\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a9a2065c04fe92c4a91ba1b29936168c8}{Period\+Elapsed\+Half\+Cplt\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a5f7837f6f654feb8161cdf6d4013a54e}{Trigger\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a01d9672372a51aba5ed172428f36bde7}{Trigger\+Half\+Cplt\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a4c0f25bf4738e89715b87ca5f08c4908}{IC\+\_\+\+Capture\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a7ed529bc90fe959332f584807f5b180a}{IC\+\_\+\+Capture\+Half\+Cplt\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a45456ba1402b3f87d7017cc2cbf1ac0f}{OC\+\_\+\+Delay\+Elapsed\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a280bf3d8ea5cb654aa52af7f4c4719fd}{PWM\+\_\+\+Pulse\+Finished\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a59a2436defb38160dce232396ae33807}{PWM\+\_\+\+Pulse\+Finished\+Half\+Cplt\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a7ad60e9d2b1e0ca0ab26807f2d18ab64}{Error\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a7882d6d136accf7818963b488beef8f8}{Commutation\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_af72793f608743684f7be3d187efb2af1}{Commutation\+Half\+Cplt\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a8711bcfc5a136a90bbcd0e07710a2666}{Break\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_____t_i_m___handle_type_def_a05664577d047cd2c3226e3a8cd505bdd}{Break2\+Callback}} )(struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TIM Time Base Handle Structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_____t_i_m___handle_type_def_a19a858dba8ca259e12fc027ce04f34c9}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Base\_MspDeInitCallback@{Base\_MspDeInitCallback}}
+\index{Base\_MspDeInitCallback@{Base\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Base\_MspDeInitCallback}{Base\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a19a858dba8ca259e12fc027ce04f34c9} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Base\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Base Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_aefdb61ea6d3e53063d3d0dacf6684690}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Base\_MspInitCallback@{Base\_MspInitCallback}}
+\index{Base\_MspInitCallback@{Base\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Base\_MspInitCallback}{Base\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_aefdb61ea6d3e53063d3d0dacf6684690} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Base\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Base Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a05664577d047cd2c3226e3a8cd505bdd}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Break2Callback@{Break2Callback}}
+\index{Break2Callback@{Break2Callback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Break2Callback}{Break2Callback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a05664577d047cd2c3226e3a8cd505bdd} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Break2\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Break2 Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a8711bcfc5a136a90bbcd0e07710a2666}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!BreakCallback@{BreakCallback}}
+\index{BreakCallback@{BreakCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{BreakCallback}{BreakCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a8711bcfc5a136a90bbcd0e07710a2666} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Break\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Break Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a483ab5ad7eaebf2e4798361047dc64a1}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Channel@{Channel}}
+\index{Channel@{Channel}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a483ab5ad7eaebf2e4798361047dc64a1} 
+\mbox{\hyperlink{group___t_i_m___exported___types_gaa3fa7bcbb4707f1151ccfc90a8cf9706}{HAL\+\_\+\+TIM\+\_\+\+Active\+Channel}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Channel}
+
+Active channel ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_af7007ff752c7b50010086958a7bf9a29}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!ChannelNState@{ChannelNState}}
+\index{ChannelNState@{ChannelNState}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ChannelNState}{ChannelNState}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_af7007ff752c7b50010086958a7bf9a29} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga1a70fcbe9952e18af5c890e216a15f34}{HAL\+\_\+\+TIM\+\_\+\+Channel\+State\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Channel\+NState\mbox{[}4\mbox{]}}
+
+TIM complementary channel operation state ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a2b789b148fb386cba8b41aa8405b3e98}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!ChannelState@{ChannelState}}
+\index{ChannelState@{ChannelState}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ChannelState}{ChannelState}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a2b789b148fb386cba8b41aa8405b3e98} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga1a70fcbe9952e18af5c890e216a15f34}{HAL\+\_\+\+TIM\+\_\+\+Channel\+State\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Channel\+State\mbox{[}6\mbox{]}}
+
+TIM channel operation state ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a7882d6d136accf7818963b488beef8f8}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!CommutationCallback@{CommutationCallback}}
+\index{CommutationCallback@{CommutationCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{CommutationCallback}{CommutationCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a7882d6d136accf7818963b488beef8f8} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Commutation\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Commutation Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_af72793f608743684f7be3d187efb2af1}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!CommutationHalfCpltCallback@{CommutationHalfCpltCallback}}
+\index{CommutationHalfCpltCallback@{CommutationHalfCpltCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{CommutationHalfCpltCallback}{CommutationHalfCpltCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_af72793f608743684f7be3d187efb2af1} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Commutation\+Half\+Cplt\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Commutation half complete Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_af7253f870ec47dd94ca9cdeafbc08d96}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!DMABurstState@{DMABurstState}}
+\index{DMABurstState@{DMABurstState}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMABurstState}{DMABurstState}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_af7253f870ec47dd94ca9cdeafbc08d96} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_ga9b87df539778a60ea940a9d5ba793f7c}{HAL\+\_\+\+TIM\+\_\+\+DMABurst\+State\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+DMABurst\+State}
+
+DMA burst operation state ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_afbb300097d40ee1220f88441d9713d56}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Encoder\_MspDeInitCallback@{Encoder\_MspDeInitCallback}}
+\index{Encoder\_MspDeInitCallback@{Encoder\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Encoder\_MspDeInitCallback}{Encoder\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_afbb300097d40ee1220f88441d9713d56} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Encoder\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Encoder Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a8d049ab1795c3e0f467378fe48b7dc79}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Encoder\_MspInitCallback@{Encoder\_MspInitCallback}}
+\index{Encoder\_MspInitCallback@{Encoder\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Encoder\_MspInitCallback}{Encoder\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a8d049ab1795c3e0f467378fe48b7dc79} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Encoder\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Encoder Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a7ad60e9d2b1e0ca0ab26807f2d18ab64}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!ErrorCallback@{ErrorCallback}}
+\index{ErrorCallback@{ErrorCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ErrorCallback}{ErrorCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a7ad60e9d2b1e0ca0ab26807f2d18ab64} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Error\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Error Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_aa5f0c533c853b2ab467bb2ba964b5288}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!HallSensor\_MspDeInitCallback@{HallSensor\_MspDeInitCallback}}
+\index{HallSensor\_MspDeInitCallback@{HallSensor\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{HallSensor\_MspDeInitCallback}{HallSensor\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_aa5f0c533c853b2ab467bb2ba964b5288} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Hall\+Sensor\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Hall Sensor Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a40abd1e3986647b0834f80ed3feb09b0}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!HallSensor\_MspInitCallback@{HallSensor\_MspInitCallback}}
+\index{HallSensor\_MspInitCallback@{HallSensor\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{HallSensor\_MspInitCallback}{HallSensor\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a40abd1e3986647b0834f80ed3feb09b0} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Hall\+Sensor\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Hall Sensor Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_ae41c37262d9dbee8c7ab21a575b8fcdb}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!hdma@{hdma}}
+\index{hdma@{hdma}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdma}{hdma}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_ae41c37262d9dbee8c7ab21a575b8fcdb} 
+\mbox{\hyperlink{group___d_m_a___exported___types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::hdma\mbox{[}7\mbox{]}}
+
+DMA Handlers array This array is accessed by a \doxylink{group___d_m_a___handle__index}{TIM DMA Handle Index} \Hypertarget{struct_____t_i_m___handle_type_def_a4c0f25bf4738e89715b87ca5f08c4908}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!IC\_CaptureCallback@{IC\_CaptureCallback}}
+\index{IC\_CaptureCallback@{IC\_CaptureCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{IC\_CaptureCallback}{IC\_CaptureCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a4c0f25bf4738e89715b87ca5f08c4908} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+IC\+\_\+\+Capture\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Input Capture Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a7ed529bc90fe959332f584807f5b180a}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!IC\_CaptureHalfCpltCallback@{IC\_CaptureHalfCpltCallback}}
+\index{IC\_CaptureHalfCpltCallback@{IC\_CaptureHalfCpltCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{IC\_CaptureHalfCpltCallback}{IC\_CaptureHalfCpltCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a7ed529bc90fe959332f584807f5b180a} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+IC\+\_\+\+Capture\+Half\+Cplt\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Input Capture half complete Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a0347b280fe557b6b2193235214598970}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!IC\_MspDeInitCallback@{IC\_MspDeInitCallback}}
+\index{IC\_MspDeInitCallback@{IC\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{IC\_MspDeInitCallback}{IC\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a0347b280fe557b6b2193235214598970} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+IC\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM IC Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a8a4193db348f243741ed0d1906fc837e}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!IC\_MspInitCallback@{IC\_MspInitCallback}}
+\index{IC\_MspInitCallback@{IC\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{IC\_MspInitCallback}{IC\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a8a4193db348f243741ed0d1906fc837e} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+IC\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM IC Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a4893a3f79eb1219b9dcf341ca4ccb885}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Init@{Init}}
+\index{Init@{Init}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Init}{Init}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a4893a3f79eb1219b9dcf341ca4ccb885} 
+\mbox{\hyperlink{struct_t_i_m___base___init_type_def}{TIM\+\_\+\+Base\+\_\+\+Init\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Init}
+
+TIM Time Base required parameters ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a3766fb0e0e798562f4d51bf15a5dcd9c}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Instance@{Instance}}
+\index{Instance@{Instance}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a3766fb0e0e798562f4d51bf15a5dcd9c} 
+\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Instance}
+
+Register base address ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_af036df32c7e2440fb06776293db7c624}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!Lock@{Lock}}
+\index{Lock@{Lock}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Lock}{Lock}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_af036df32c7e2440fb06776293db7c624} 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Lock}
+
+Locking object ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a45456ba1402b3f87d7017cc2cbf1ac0f}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!OC\_DelayElapsedCallback@{OC\_DelayElapsedCallback}}
+\index{OC\_DelayElapsedCallback@{OC\_DelayElapsedCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{OC\_DelayElapsedCallback}{OC\_DelayElapsedCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a45456ba1402b3f87d7017cc2cbf1ac0f} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+OC\+\_\+\+Delay\+Elapsed\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Output Compare Delay Elapsed Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a59f834f89702896b8874f9ce4139f9dc}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!OC\_MspDeInitCallback@{OC\_MspDeInitCallback}}
+\index{OC\_MspDeInitCallback@{OC\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{OC\_MspDeInitCallback}{OC\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a59f834f89702896b8874f9ce4139f9dc} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+OC\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM OC Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_aabe04080d6da958bcfa4a0a76fa02f64}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!OC\_MspInitCallback@{OC\_MspInitCallback}}
+\index{OC\_MspInitCallback@{OC\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{OC\_MspInitCallback}{OC\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_aabe04080d6da958bcfa4a0a76fa02f64} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+OC\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM OC Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a06f7ceec3d962916e2ac37276f09062d}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!OnePulse\_MspDeInitCallback@{OnePulse\_MspDeInitCallback}}
+\index{OnePulse\_MspDeInitCallback@{OnePulse\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{OnePulse\_MspDeInitCallback}{OnePulse\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a06f7ceec3d962916e2ac37276f09062d} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+One\+Pulse\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM One Pulse Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_ae382932aa6137bfd1fa10a43701d28b8}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!OnePulse\_MspInitCallback@{OnePulse\_MspInitCallback}}
+\index{OnePulse\_MspInitCallback@{OnePulse\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{OnePulse\_MspInitCallback}{OnePulse\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_ae382932aa6137bfd1fa10a43701d28b8} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+One\+Pulse\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM One Pulse Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a7de0d85dcc380004ed876c51fd768d66}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PeriodElapsedCallback@{PeriodElapsedCallback}}
+\index{PeriodElapsedCallback@{PeriodElapsedCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PeriodElapsedCallback}{PeriodElapsedCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a7de0d85dcc380004ed876c51fd768d66} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Period\+Elapsed\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Period Elapsed Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a9a2065c04fe92c4a91ba1b29936168c8}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PeriodElapsedHalfCpltCallback@{PeriodElapsedHalfCpltCallback}}
+\index{PeriodElapsedHalfCpltCallback@{PeriodElapsedHalfCpltCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PeriodElapsedHalfCpltCallback}{PeriodElapsedHalfCpltCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a9a2065c04fe92c4a91ba1b29936168c8} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Period\+Elapsed\+Half\+Cplt\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Period Elapsed half complete Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_ad10b66a214cb471d87b114823b3e6569}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PWM\_MspDeInitCallback@{PWM\_MspDeInitCallback}}
+\index{PWM\_MspDeInitCallback@{PWM\_MspDeInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PWM\_MspDeInitCallback}{PWM\_MspDeInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_ad10b66a214cb471d87b114823b3e6569} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+PWM\+\_\+\+Msp\+De\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM PWM Msp De\+Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a74a894bd6bfc406ea17c80dac617576d}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PWM\_MspInitCallback@{PWM\_MspInitCallback}}
+\index{PWM\_MspInitCallback@{PWM\_MspInitCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PWM\_MspInitCallback}{PWM\_MspInitCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a74a894bd6bfc406ea17c80dac617576d} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+PWM\+\_\+\+Msp\+Init\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM PWM Msp Init Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a280bf3d8ea5cb654aa52af7f4c4719fd}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PWM\_PulseFinishedCallback@{PWM\_PulseFinishedCallback}}
+\index{PWM\_PulseFinishedCallback@{PWM\_PulseFinishedCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PWM\_PulseFinishedCallback}{PWM\_PulseFinishedCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a280bf3d8ea5cb654aa52af7f4c4719fd} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+PWM\+\_\+\+Pulse\+Finished\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM PWM Pulse Finished Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a59a2436defb38160dce232396ae33807}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!PWM\_PulseFinishedHalfCpltCallback@{PWM\_PulseFinishedHalfCpltCallback}}
+\index{PWM\_PulseFinishedHalfCpltCallback@{PWM\_PulseFinishedHalfCpltCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PWM\_PulseFinishedHalfCpltCallback}{PWM\_PulseFinishedHalfCpltCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a59a2436defb38160dce232396ae33807} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+PWM\+\_\+\+Pulse\+Finished\+Half\+Cplt\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM PWM Pulse Finished half complete Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a377e02048748083f063db636ab248c19}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!State@{State}}
+\index{State@{State}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a377e02048748083f063db636ab248c19} 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___t_i_m___exported___types_gae0994cf5970e56ca4903e9151f40010c}{HAL\+\_\+\+TIM\+\_\+\+State\+Type\+Def}} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+State}
+
+TIM operation state ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a5f7837f6f654feb8161cdf6d4013a54e}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!TriggerCallback@{TriggerCallback}}
+\index{TriggerCallback@{TriggerCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TriggerCallback}{TriggerCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a5f7837f6f654feb8161cdf6d4013a54e} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Trigger\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Trigger Callback ~\newline
+ \Hypertarget{struct_____t_i_m___handle_type_def_a01d9672372a51aba5ed172428f36bde7}\index{\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}!TriggerHalfCpltCallback@{TriggerHalfCpltCallback}}
+\index{TriggerHalfCpltCallback@{TriggerHalfCpltCallback}!\_\_TIM\_HandleTypeDef@{\_\_TIM\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TriggerHalfCpltCallback}{TriggerHalfCpltCallback}}
+{\footnotesize\ttfamily \label{struct_____t_i_m___handle_type_def_a01d9672372a51aba5ed172428f36bde7} 
+void(\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def\+::\+Trigger\+Half\+Cplt\+Callback) (struct \mbox{\hyperlink{struct_____t_i_m___handle_type_def}{\+\_\+\+\_\+\+TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)}
+
+TIM Trigger half complete Callback ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L4xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l4xx__hal__tim_8h}{stm32l4xx\+\_\+hal\+\_\+tim.\+h}}\end{DoxyCompactItemize}

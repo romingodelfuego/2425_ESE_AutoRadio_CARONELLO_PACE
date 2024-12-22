@@ -1,0 +1,107 @@
+\doxysection{SGTL5000.\+h}
+\hypertarget{_s_g_t_l5000_8h_source}{}\label{_s_g_t_l5000_8h_source}\index{Core/Inc/components/SGTL5000.h@{Core/Inc/components/SGTL5000.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ SGTL5000.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Dec\ 3,\ 2024}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ romingo}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_COMPONENTS\_SGTL5000\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_COMPONENTS\_SGTL5000\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c_8h}{i2c.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sai_8h}{sai.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}shell.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ CHIP\_ANA\_POWER\ 0x0030}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ CHIP\_LINREG\_CTRL\ 0x0026}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ CHIP\_REF\_CTRL\ 0x0028}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ CHIP\_LINE\_OUT\_CTRL\ 0x002C}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ CHIP\_SHORT\_CTRL\ 0x003C}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ CHIP\_ANA\_CTRL\ 0x0024}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CHIP\_LINE\_OUT\_VOL\ 0x002E}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CHIP\_CLK\_CTRL\ 0x0004}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ CHIP\_DIG\_POWER\ 0x0002}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ CHIP\_I2S\_CTRL\ 0x0006}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ CHIP\_ADCDAC\_CTRL\ 0x000E}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ CHIP\_DAC\_VOL\ 0x0010}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ CHIP\_SSS\_CTRL\ 0x000A}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\mbox{\hyperlink{structh__sgtl5000__t}{h\_sgtl5000\_t}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ SGTL\_readregister(uint16\_t\ reg,\ uint8\_t*pData);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ SGTL\_writeregister(uint16\_t\ reg,\ uint16\_t\ data);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ sgtl5000\_i2c\_read\_register(uint16\_t\ reg\_address,\ uint16\_t\ *\ p\_data);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ sgtl5000\_i2c\_write\_register(uint16\_t\ reg\_address,\ uint16\_t\ data);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ sgtl5000\_i2c\_set\_bit(uint16\_t\ reg\_address,\ uint16\_t\ mask);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ sgtl5000\_i2c\_clear\_bit(uint16\_t\ reg\_address,\ uint16\_t\ mask);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ SGTL\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ sgtl5000\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ sgtl5000\_registers\_enum}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ SGTL5000\_CHIP\_ID\ =\ 0x0000,}
+\DoxyCodeLine{00047\ \ \ \ \ SGTL5000\_CHIP\_DIG\_POWER\ =\ 0x0002,}
+\DoxyCodeLine{00048\ \ \ \ \ SGTL5000\_CHIP\_CLK\_CTRL\ =\ 0x0004,}
+\DoxyCodeLine{00049\ \ \ \ \ SGTL5000\_CHIP\_I2S\_CTRL\ =\ 0x0006,}
+\DoxyCodeLine{00050\ \ \ \ \ SGTL5000\_CHIP\_SSS\_CTRL\ =\ 0x000A,}
+\DoxyCodeLine{00051\ \ \ \ \ SGTL5000\_CHIP\_ADCDAC\_CTRL\ =\ 0x000E,}
+\DoxyCodeLine{00052\ \ \ \ \ SGTL5000\_CHIP\_DAC\_VOL\ =\ 0x0010,}
+\DoxyCodeLine{00053\ \ \ \ \ SGTL5000\_CHIP\_PAD\_STRENGTH\ =\ 0x0014,}
+\DoxyCodeLine{00054\ \ \ \ \ SGTL5000\_CHIP\_ANA\_ADC\_CTRL\ =\ 0x0020,}
+\DoxyCodeLine{00055\ \ \ \ \ SGTL5000\_CHIP\_ANA\_HP\_CTRL\ =\ 0x0022,}
+\DoxyCodeLine{00056\ \ \ \ \ SGTL5000\_CHIP\_ANA\_CTRL\ =\ 0x0024,}
+\DoxyCodeLine{00057\ \ \ \ \ SGTL5000\_CHIP\_LINREG\_CTRL\ =\ 0x0026,}
+\DoxyCodeLine{00058\ \ \ \ \ SGTL5000\_CHIP\_REF\_CTRL\ =\ 0x0028,}
+\DoxyCodeLine{00059\ \ \ \ \ SGTL5000\_CHIP\_MIC\_CTRL\ =\ 0x002A,}
+\DoxyCodeLine{00060\ \ \ \ \ SGTL5000\_CHIP\_LINE\_OUT\_CTRL\ =\ 0x002C,}
+\DoxyCodeLine{00061\ \ \ \ \ SGTL5000\_CHIP\_LINE\_OUT\_VOL\ =\ 0x002E,}
+\DoxyCodeLine{00062\ \ \ \ \ SGTL5000\_CHIP\_ANA\_POWER\ =\ 0x0030,}
+\DoxyCodeLine{00063\ \ \ \ \ SGTL5000\_CHIP\_PLL\_CTRL\ =\ 0x0032,}
+\DoxyCodeLine{00064\ \ \ \ \ SGTL5000\_CHIP\_CLK\_TOP\_CTRL\ =\ 0x0034,}
+\DoxyCodeLine{00065\ \ \ \ \ SGTL5000\_SHIP\_ANA\_STATUS\ =\ 0x0036,}
+\DoxyCodeLine{00066\ \ \ \ \ SGTL5000\_CHIP\_ANA\_TEST1\ =\ 0x0038,}
+\DoxyCodeLine{00067\ \ \ \ \ SGTL5000\_CHIP\_ANA\_TEST2\ =\ 0x003A,}
+\DoxyCodeLine{00068\ \ \ \ \ SGTL5000\_CHIP\_SHORT\_CTRL\ =\ 0x003C,}
+\DoxyCodeLine{00069\ \ \ \ \ SGTL5000\_DAP\_CONTROL\ =\ 0x0100,}
+\DoxyCodeLine{00070\ \ \ \ \ SGTL5000\_DAP\_PEQ\ =\ 0x0102,}
+\DoxyCodeLine{00071\ \ \ \ \ SGTL5000\_DAP\_BASS\_ENHANCE\ =\ 0x0104,}
+\DoxyCodeLine{00072\ \ \ \ \ SGTL5000\_DAP\_BASS\_ENHANCE\_CTRL\ =\ 0x0106,}
+\DoxyCodeLine{00073\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\ =\ 0x0108,}
+\DoxyCodeLine{00074\ \ \ \ \ SGTL5000\_DAP\_SGTL\_SURROUND\ =\ 0x010A,}
+\DoxyCodeLine{00075\ \ \ \ \ SGTL5000\_DAP\_FILTER\_COEF\_ACCESS\ =\ 0x010C,}
+\DoxyCodeLine{00076\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B0\_MSB\ =\ 0x010E,}
+\DoxyCodeLine{00077\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B0\_LSB\ =\ 0x0110,}
+\DoxyCodeLine{00078\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\_BASS\_BAND0\ =\ 0x0116,}
+\DoxyCodeLine{00079\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\_BAND1\ =\ 0x0118,}
+\DoxyCodeLine{00080\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\_BAND2\ =\ 0x011A,}
+\DoxyCodeLine{00081\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\_BAND3\ =\ 0x011C,}
+\DoxyCodeLine{00082\ \ \ \ \ SGTL5000\_DAP\_AUDIO\_EQ\_TREBLE\_BAND4\ =\ 0x011E,}
+\DoxyCodeLine{00083\ \ \ \ \ SGTL5000\_DAP\_MAIN\_CHAN\ =\ 0x0120,}
+\DoxyCodeLine{00084\ \ \ \ \ SGTL5000\_DAP\_MIX\_CHAN\ =\ 0x0122,}
+\DoxyCodeLine{00085\ \ \ \ \ SGTL5000\_DAP\_AVC\_CTRL\ =\ 0x0124,}
+\DoxyCodeLine{00086\ \ \ \ \ SGTL5000\_DAP\_AVC\_THRESHOLD\ =\ 0x0126,}
+\DoxyCodeLine{00087\ \ \ \ \ SGTL5000\_DAP\_AVC\_ATTACK\ =\ 0x0128,}
+\DoxyCodeLine{00088\ \ \ \ \ SGTL5000\_DAP\_AVC\_DECAY\ =\ 0x012A,}
+\DoxyCodeLine{00089\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B1\_MSB\ =\ 0x012C,}
+\DoxyCodeLine{00090\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B1\_LSB\ =\ 0x012E,}
+\DoxyCodeLine{00091\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B2\_MSB\ =\ 0x0130,}
+\DoxyCodeLine{00092\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_B2\_LSB\ =\ 0x0132,}
+\DoxyCodeLine{00093\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_A1\_MSB\ =\ 0x0134,}
+\DoxyCodeLine{00094\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_A1\_LSB\ =\ 0x0136,}
+\DoxyCodeLine{00095\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_A2\_MSB\ =\ 0x0138,}
+\DoxyCodeLine{00096\ \ \ \ \ SGTL5000\_DAP\_COEF\_WR\_A2\_LSB\ =\ 0x013A}
+\DoxyCodeLine{00097\ \}\ sgtl5000\_registers\_t;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_COMPONENTS\_SGTL5000\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+
+\end{DoxyCode}
