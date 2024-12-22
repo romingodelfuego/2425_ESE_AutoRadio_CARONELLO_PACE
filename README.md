@@ -5,7 +5,7 @@ Voir ici la [datasheet : audio interface](./audio_iface.pdf)
 
 Nous avons mis un point d'honneur sur l'organisation des fichiers. Pour vous aidez à vous y retrouver, nous avons documenté avec Doxygen le projet.
 
->[Vue d'ensemble DOXYGEN](/Architecture/html/files.html)
+>[Vue d'ensemble DOXYGEN](https://romingodelfuego.github.io/2425_ESE_AutoRadio_CARONELLO_PACE)
 #### Milestone
 - [x] [1. Shell RTOS](#1-démarrage)
 - [x] [2. Driver LED](#23-driver)
