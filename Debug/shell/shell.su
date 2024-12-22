@@ -1,0 +1,7 @@
+../shell/shell.c:53:6:shell_init	8	static
+../shell/shell.c:67:6:shell_run	24	static
+../shell/shell.c:130:6:subfunct_help	40	static
+../shell/shell.c:140:6:subfunct_i2c	16	static
+../shell/shell.c:144:6:subfunct_led	24	static
+../shell/shell.c:155:6:subfunct_clear	16	static
+../shell/shell.c:163:6:debug	16	static

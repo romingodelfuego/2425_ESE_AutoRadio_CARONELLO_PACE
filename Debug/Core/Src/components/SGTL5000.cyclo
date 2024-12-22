@@ -1,0 +1,8 @@
+../Core/Src/components/SGTL5000.c:14:6:SGTL_readregister	1
+../Core/Src/components/SGTL5000.c:20:6:SGTL_writeregister	1
+../Core/Src/components/SGTL5000.c:29:6:SGTL_init	1
+../Core/Src/components/SGTL5000.c:112:19:sgtl5000_init	1
+../Core/Src/components/SGTL5000.c:255:5:sgtl5000_i2c_read_register	2
+../Core/Src/components/SGTL5000.c:275:5:sgtl5000_i2c_write_register	2
+../Core/Src/components/SGTL5000.c:295:5:sgtl5000_i2c_set_bit	1
+../Core/Src/components/SGTL5000.c:314:5:sgtl5000_i2c_clear_bit	1
