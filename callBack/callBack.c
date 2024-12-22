@@ -29,10 +29,4 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	}
 }
 
-void XferCpltCallback(DMA_HandleTypeDef *hdma){
-	if (hdma->Instance == DMA1_Channel6) {
-
-
-	}
-}
 

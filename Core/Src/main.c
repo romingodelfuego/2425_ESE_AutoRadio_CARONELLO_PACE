@@ -45,13 +45,19 @@ uint16_t data_SAI_rx[SIZE_SAI_BUFFER];
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+#define GENERATOR 1
+#define SWITCHER 2
+#define MODE SWITCHER
+//#define MODE GENERATOR
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 #define TASK_STACK_DEPTH_SHELL 2048
 #define TASK_PRIORITY_SHELL 3
-#define TASK_STACK_DEPTH_VU 2048
+#define TASK_STACK_DEPTH_VU 512
 #define TASK_PRIORITY_VU 4
 /* USER CODE END PM */
 
@@ -118,11 +124,25 @@ int main(void)
 	xTaskCreate(shell_run,	"Shell", TASK_STACK_DEPTH_SHELL, NULL, TASK_PRIORITY_SHELL, &h_task_shell) != pdPASS ? Error_Handler():(void)0;
 	xTaskCreate(vu_run,	"VU", TASK_STACK_DEPTH_VU, NULL, TASK_PRIORITY_VU, &h_task_vu) != pdPASS ? Error_Handler():(void)0;
 
-	__HAL_SAI_ENABLE(&hsai_BlockB2);
+#ifdef MODE
+	#if MODE == GENERATOR
+    for (int i = 0; i < SIZE_SAI_BUFFER / 2; i++) {
+        // Montée du triangle
+        data_SAI_rx[i] = (uint16_t)((float)i / (SIZE_SAI_BUFFER / 2) * UINT16_MAX);
+    }
+    for (int i = SIZE_SAI_BUFFER / 2; i < SIZE_SAI_BUFFER; i++) {
+        // Descente du triangle
+        data_SAI_rx[i] = (uint16_t)((float)(SIZE_SAI_BUFFER - i) / (SIZE_SAI_BUFFER / 2) * UINT16_MAX);
+    }
 	__HAL_SAI_ENABLE(&hsai_BlockA2);
-	HAL_SAI_Receive_DMA(&hsai_BlockB2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER);
 	HAL_SAI_Transmit_DMA(&hsai_BlockA2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER);
-
+	#elif MODE == SWITCHER
+		__HAL_SAI_ENABLE(&hsai_BlockB2);
+		__HAL_SAI_ENABLE(&hsai_BlockA2);
+		HAL_SAI_Receive_DMA(&hsai_BlockB2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER);
+		HAL_SAI_Transmit_DMA(&hsai_BlockA2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER);
+	#endif
+#endif
 	/* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */

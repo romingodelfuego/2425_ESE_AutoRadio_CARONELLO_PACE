@@ -170,13 +170,13 @@ void DebugMon_Handler(void)
 void DMA1_Channel6_IRQHandler(void)
 {
 	/* USER CODE BEGIN DMA1_Channel6_IRQn 0 */
-/	BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+	BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
 	xTaskNotifyFromISR(h_task_vu,
 			1,
 			eSetBits,
 			&pxHigherPriorityTaskWoken);
 	portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
-*/
+
 	/* USER CODE END DMA1_Channel6_IRQn 0 */
 	HAL_DMA_IRQHandler(&hdma_sai2_a);
 	/* USER CODE BEGIN DMA1_Channel6_IRQn 1 */

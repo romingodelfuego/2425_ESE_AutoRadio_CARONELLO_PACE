@@ -1,3 +1,2 @@
 ../callBack/callBack.c:19:6:CUSTOM_TIM_PeriodElapsedCallback	16	static
 ../callBack/callBack.c:23:6:HAL_UART_RxCpltCallback	24	static,ignoring_inline_asm
-../callBack/callBack.c:32:6:XferCpltCallback	16	static
