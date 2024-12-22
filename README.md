@@ -5,7 +5,7 @@ Voir ici la [datasheet : audio interface](./audio_iface.pdf)
 
 Nous avons mis un point d'honneur sur l'organisation des fichiers. Pour vous aidez à vous y retrouver, nous avons documenté avec Doxygen le projet.
 
->[Vue d'ensemble DOXYGEN](/Architecture/html/files.html)
+>[Vue d'ensemble DOXYGEN](https://romingodelfuego.github.io/2425_ESE_AutoRadio_CARONELLO_PACE/files.html)
 #### Milestone
 - [x] [1. Shell RTOS](#1-démarrage)
 - [x] [2. Driver LED](#23-driver)
@@ -109,3 +109,60 @@ Nous avions créer une tache, créer des notifications lors de la fin de la réc
 Dans le code, nous avons tenter une première méthode dans laquelle nous regardions si la moyenne du signal était comprise entre certain seuil. Malheureusement ce n'est pas ainsi que l'echelle VU fonctionne.
 
 Il fautdrait donc implémenter une correspondance entre le signal et l'échelle VU : [WIKIPEDIA - Vu Mètre](https://fr.wikipedia.org/wiki/VU-m%C3%A8tre)
+
+
+## Doxygen en GithubPages 
+### Installation de Doxygen
+- Installer doxyfile
+    - MacOs : 
+    ````
+    brew install doxygen
+    ````
+    - Linux : 
+    ```
+    sudo apt install doxygen
+    ```
+- Créer un doxyfile dans votre répertoire 
+```bash
+doxygen -g
+open Doxyfile
+```
+### Configuration du Doxyfile
+
+- Pour que le doxyfile créer un dossier avec tous les documents:
+````bash
+OUTPUT_DIRECTORY        = ./Architecture
+````
+- Pour que le doxyfile cherche dans les dossiers:
+````bash
+RECURSIVE               = YES
+````
+- Compiler le doxygen 
+````bash
+doxygen doxyfile
+open ./Architecture/html/index.html
+```` 
+
+### Publier sur le GitHub Pages
+[Références API GITHUB](https://docs.github.com/en/rest/pages/pages?apiVersion=2022-11-28#create-a-github-pages-site)
+Pour créer une pages
+````r
+# GitHub CLI api
+# https://cli.github.com/manual/gh_api
+
+gh api \
+  --method POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /repos/OWNER/REPO/pages \
+   -f "source[branch]=main" -f "source[path]=/Architecture/html/"
+`````
+
+Pour associer le Doxygen a cette page
+````r
+gh api \                                                                                                                                      romingo@RoMackBook-Air
+  --method POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /repos/OWNER/REPO/pages 
+  ````
