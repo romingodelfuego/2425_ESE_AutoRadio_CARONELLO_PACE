@@ -76,7 +76,7 @@ int sgtl5000_i2c_clear_bit(uint16_t reg_address, uint16_t mask);
 ````
 ### 3.4 Génération de signal audio
 Dans le .ioc, on configue le block A2 pour être en `Master with Master Clock` pour gérer la transmission. Et le block B2 comme un `Synchronous Slave` pour gérer la réception.
-Pour générer un signal triangle, on n'active seulement le canal A2 du I2S et on transmet  par DMA le bufffer rempli pour être un triangle.
+Pour générer un signal triangle, on n'active seulement le canal A2 du I2S et on transmet par DMA un bufffer qui se rempli puis se vide pour générer le signal triangle attendu.
 
 ````c
 for (int i = 0; i < SIZE_SAI_BUFFER / 2; i++) {
@@ -99,8 +99,7 @@ __HAL_SAI_ENABLE(&hsai_BlockA2);
 HAL_SAI_Receive_DMA(&hsai_BlockB2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER);
 HAL_SAI_Transmit_DMA(&hsai_BlockA2, (uint8_t*)data_SAI_rx, SIZE_SAI_BUFFER)
 ````
-Nous avons tester en envoyant depuis un port jack de nos ordinateurs une musique, puis nous avons ecouter depuis la prise jack de sortie sur des ecouteurs filaires la musique.
-Le son n'est vraiment pas bon, il semble que les aigues soient complètement filtrés. 
+Nous avons tester en envoyant depuis un port jack de nos ordinateurs une musique, puis nous avons ecouter depuis la prise jack de sortie sur des ecouteurs filaires la musique. En effet nous avons branché notre sortie d'ordinateur au connecteur LINEIN et branché ensuite la sortie de la carte HP à des écouteurs. Nous avons pu entendre du bruit avec néamoins certains sons coupés il semble que les aigues soient complètement filtrés. 
 
 ### 4. Visualisation
 Nous êtions proches de proposer un vu-metre sur ce TP.
